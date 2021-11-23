@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>To Do</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <div id="app">
+      <h1>To Do App</h1>
+      <div v-if="editTarget === ''">
+        <input type="text" v-model="newItem">
+        <button @click="addItem">Add</button>
+        <ul>
+          <li v-for="(item, id) in items">
+            {{ item }}
+            <button @click="editItem(id)">Edit</button>
+            <button @click="deleteItem(id)">Delete</button>
+          </li>
+        </ul>
+      </div>
+      <div v-else>
+        edit mode
+        <input type="text" v-model="editTarget.value">
+        <button @click="updateItem">Update</button>
+        <button @click="stopEdit">Back</button>
+        {{editTarget}}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3.2.22"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
