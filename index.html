@@ -9,25 +9,35 @@
 <body>
 
   <div class="container">
-    <div id="app">
-      <h1>To Do App</h1>
+    <header>
+      <h1 class="header-text">To Do App</h1>
+    </header>
+    <div id="app" class="app">
       <div v-if="editTarget === ''">
-        <input type="text" v-model="newItem">
-        <button @click="addItem">Add</button>
-        <ul>
-          <li v-for="(item, id) in items">
-            {{ item }}
-            <button @click="editItem(id)">Edit</button>
-            <button @click="deleteItem(id)">Delete</button>
-          </li>
-        </ul>
+        <div class="item-form">
+          <input type="text" class="input-item" v-model="newItem">
+          <button class="btn form-btn" @click="addItem">Add</button>
+        </div>
+        <div class="todo-list">
+          <ul>
+            <li class="todo-list-item" v-for="(item, id) in items">
+              <p class="todo-text">{{ item }}</p>
+              <div class="flex-area">
+                <button class="btn" @click="editItem(id)">Edit</button>
+                <button class="btn" @click="deleteItem(id)">Delete</button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
+
       <div v-else>
-        edit mode
-        <input type="text" v-model="editTarget.value">
-        <button @click="updateItem">Update</button>
-        <button @click="stopEdit">Back</button>
-        {{editTarget}}
+        <h2>Edit</h2>
+        <div class="item-form">
+          <input type="text" v-model="editTarget.value">
+          <button class="btn form-btn" @click="updateItem">Update</button>
+          <button class="btn form-btn" @click="cancelEdit">Back</button>
+        </div>
       </div>
     </div>
   </div>
