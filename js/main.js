@@ -4,7 +4,7 @@ const app = {
   data: () => ({
     items: JSON.parse(localStorage.getItem('items')) ?? {},
     newItem: '',
-    editTarget: ''
+    editTarget: null
   }),
   methods: {
     addItem () {
@@ -23,10 +23,10 @@ const app = {
     updateItem () {
       this.items[this.editTarget.id] = this.editTarget.value
       localStorage.setItem('items', JSON.stringify(this.items))
-      this.editTarget = ''
+      this.editTarget = null
     },
     cancelEdit () {
-      this.editTarget = ''
+      this.editTarget = null
     },
     deleteItem (id) {
       if (confirm('Are you sure to delete?')) {
