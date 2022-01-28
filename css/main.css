@@ -1,0 +1,91 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  padding: 0.7rem 3rem;
+  width: 100%;
+  background-color: white;
+  border-bottom: solid 1px #585551;
+}
+
+h2 {
+  margin: 1rem;
+  color: #585551;
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-text {
+  font-size: 2.8rem;
+  text-decoration: none;
+  color: #585551;
+  font-weight: bold;
+}
+
+.app {
+  flex: 1;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.item-form {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.item-form input[type='text'] {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+.todo-list {
+  margin: 2rem 0;
+}
+
+.todo-list-item {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.todo-text {
+  margin: 0.3rem 1rem;
+}
+
+.flex-area {
+  display: flex;
+}
+
+.btn {
+  width: 75px;
+  padding: 3px 1px;
+  margin: 0 1rem;
+  color: white;
+  background-color: #7d766d;
+  border-radius: 3px;
+}
+
+.form-btn {
+  margin-top: 1rem;
+  width: 100px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
