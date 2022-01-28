@@ -12,7 +12,7 @@
       <h1 class="header-text">To Do App</h1>
     </header>
     <div id="app" class="app">
-      <div v-if="editTarget === null">
+      <div v-if="isListMode">
         <div class="item-form">
           <input type="text" class="input-item" v-model="newItem">
           <button class="btn form-btn" @click="addItem">Add</button>

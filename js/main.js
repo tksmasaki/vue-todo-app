@@ -6,6 +6,11 @@ const app = {
     newItem: '',
     editTarget: null
   }),
+  computed: {
+    isListMode () {
+      return this.editTarget === null
+    }
+  },
   methods: {
     addItem () {
       if (this.newItem === '') return
